@@ -13,7 +13,7 @@ Vue.use(
       loading: require('common/image/default.png')
     })
   /* eslint-disable no-new */
-console.log(store)
+
 new Vue({
   el: '#app',
   router,

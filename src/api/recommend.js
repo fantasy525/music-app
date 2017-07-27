@@ -27,7 +27,14 @@ export function getDiscList() {
   })
   return axios.get(url, {
     params: data
-  }).then((res) => {
-    return Promise.resolve(res.data)
+  }).then(res => {
+    return res.data
+  })
+}
+export function getData() {
+  return axios.get('http://www.gepicev.com/gateway/api/v0.1/rent-pick-stations-map', {
+    params: {
+      city: '厦门'
+    }
   })
 }

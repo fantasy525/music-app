@@ -153,7 +153,6 @@ export default {
       this.touch.y2 = firstTouch.pageY
       let delta = (this.touch.y2 - this.touch.y1) / ANCHOR_HEIGHT | 0
       let anchorIndex = parseInt(this.touch.anchorIndex) + delta
-      console.log(this.touch.anchorIndex, delta, this.touch.y2, this.touch.y1)
       this._scrollTo(anchorIndex)
     },
     scroll(pos) {
@@ -195,7 +194,6 @@ export default {
       setTimeout(() => {
         this._calculateHeight()
       }, 20)
-      console.log(this.data)
     },
     scrollY(newY) {
       const listHeight = this.listHeight

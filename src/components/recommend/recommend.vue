@@ -82,11 +82,12 @@
         transform: translateY(-50%)
 </style>
 <script type='text/ecmascript-6'>
-import { getRecommend, getDiscList } from 'api/recommend'
+import { getRecommend, getDiscList, getData } from 'api/recommend'
 import { ERR_OK } from 'api/config'
 import Slider from 'base/slider/slider'
 import Scroll from 'base/scroll/scroll'
 import Loading from 'base/loading/loading'
+// import axios from 'axios'
 export default {
   data() {
     return {
@@ -95,6 +96,17 @@ export default {
     }
   },
   created() {
+    getData().then(res => {
+    })
+    // function getData() {
+    //   axios.get('http://www.gepicev.com/gateway/api/v0.1/rent-pick-stations-map', {
+    //     params: {
+    //       city: '厦门'
+    //     }
+    //   }).then(res => {
+    //     return Promise.resolve(res)
+    //   })
+    // }
     setTimeout(() => {
       this._getRecommend()
     }, 1000)
@@ -108,11 +120,11 @@ export default {
       getRecommend().then((res) => {
         if (res.code === ERR_OK) {
           this.recommends = res.data.slider
-          console.log('成功')
         }
       })
     },
     _getDiscList() {
+      console.log(getDiscList())
       getDiscList().then((res) => {
         if (ERR_OK === res.code) {
           this.discList = res.data.list

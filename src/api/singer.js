@@ -1,5 +1,6 @@
 import jsonp from 'common/js/jsonp'
 import { commonParams, options } from './config.js'
+// import axios from 'axios'
 export function getSingerList() {
   const url = 'https://c.y.qq.com/v8/fcg-bin/v8.fcg'
   const data = Object.assign({}, commonParams, {
